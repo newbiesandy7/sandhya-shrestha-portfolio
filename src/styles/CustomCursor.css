@@ -1,0 +1,5 @@
+/* CUSTOM CURSOR */
+.cursor{position:fixed;z-index:9999;pointer-events:none;transition:transform 0.1s;}
+.cursor-dot{width:8px;height:8px;border-radius:50%;background:var(--sunglow);transform:translate(-50%,-50%);}
+.cursor-ring{width:36px;height:36px;border-radius:50%;border:1px solid var(--cursor-ring);transform:translate(-50%,-50%);transition:width 0.3s,height 0.3s,opacity 0.3s,border-color 0.3s;}
+.cursor-ring.expand{width:60px;height:60px;opacity:0.4;}

@@ -1,0 +1,86 @@
+/* SERVICES */
+#services{
+  padding:8rem 3rem;
+  background:var(--darker);
+  position:relative;
+  overflow:hidden;
+}
+.services-bg-text{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  font-family:'Bebas Neue',sans-serif;
+  font-size:20vw;
+  color:rgba(2,18,238,0.03);
+  white-space:nowrap;
+  letter-spacing:0.05em;
+  pointer-events:none;
+  user-select:none;
+}
+.services-inner{max-width:1100px;margin:0 auto;position:relative;z-index:2;}
+.services-head{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:4rem;
+  align-items:end;
+  margin-bottom:5rem;
+}
+.services-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(3.5rem,6vw,6rem);
+  line-height:0.95;
+  color:var(--text);
+}
+.services-title .outline{
+  color:transparent;
+  -webkit-text-stroke:1px var(--sunglow);
+}
+.services-intro{font-size:0.9rem;color:var(--muted);line-height:1.8;}
+.svc-list{display:flex;flex-direction:column;gap:0;}
+.svc-item{
+  display:grid;
+  grid-template-columns:3rem 1fr auto;
+  gap:2rem;
+  align-items:center;
+  padding:1.75rem 0;
+  border-bottom:1px solid rgba(254,198,233,0.08);
+  transition:background 0.3s;
+  cursor:pointer;
+  position:relative;
+  background:transparent;
+  border:none;
+}
+.svc-item::before{
+  content:'';
+  position:absolute;
+  left:-3rem;
+  right:-3rem;
+  top:0;
+  bottom:0;
+  background:rgba(254,198,233,0.04);
+  opacity:0;
+  transition:opacity 0.3s;
+  border-radius:2px;
+}
+.svc-item:hover::before{opacity:1;}
+.svc-item:hover .svc-name{color:var(--sunglow);}
+.svc-item:hover .svc-arrow{transform:translate(4px,-4px);color:var(--sunglow);}
+.svc-num{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;color:var(--wisteria);opacity:0.5;}
+.svc-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.8rem;
+  font-weight:600;
+  letter-spacing:-0.01em;
+  transition:color 0.3s;
+  color:var(--text);
+}
+.svc-desc{font-size:0.78rem;color:var(--muted);margin-top:0.3rem;line-height:1.5;}
+.svc-price{font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--wisteria);white-space:nowrap;}
+.svc-arrow{font-size:1.2rem;color:var(--muted);transition:transform 0.3s,color 0.3s;margin-left:1rem;}
+
+@media(max-width:768px){
+  #services{padding:4rem 1.5rem;}
+  .services-head{grid-template-columns:1fr;}
+  .svc-item{grid-template-columns:2rem 1fr auto;}
+}

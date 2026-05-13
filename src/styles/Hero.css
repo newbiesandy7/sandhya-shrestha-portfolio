@@ -1,0 +1,64 @@
+/* HERO */
+.hero{
+  height:100vh;position:relative;overflow:hidden;
+  display:flex;align-items:flex-end;
+  background:var(--darker);
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 80% 60% at 70% 30%, rgba(2,18,238,0.22) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 80% at 20% 80%, rgba(210,0,1,0.1) 0%, transparent 50%),
+    var(--darker);
+}
+.hero-grid{
+  position:absolute;inset:0;
+  background-image:linear-gradient(rgba(2,18,238,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(2,18,238,0.04) 1px, transparent 1px);
+  background-size:60px 60px;
+}
+.hero-number{
+  position:absolute;right:3rem;top:50%;transform:translateY(-50%);
+  font-family:'Bebas Neue',sans-serif;font-size:clamp(12rem,20vw,18rem);
+  color:rgba(2,18,238,0.06);line-height:1;letter-spacing:-0.02em;
+  user-select:none;
+}
+.hero-content{
+  position:relative;z-index:2;padding:0 3rem 4rem;width:100%;
+}
+.hero-eyebrow{
+  font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--wisteria);margin-bottom:1.5rem;
+  display:flex;align-items:center;gap:1rem;
+  animation:fadeUp 1s ease 0.3s both;
+}
+.hero-eyebrow::before{content:'';width:40px;height:1px;background:var(--wisteria);}
+.hero-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(5rem,13vw,12rem);
+  line-height:0.9;letter-spacing:0.02em;
+  animation:fadeUp 1s ease 0.5s both;
+}
+.hero-title .t1{display:block;color:var(--text);}
+.hero-title .t2{
+  display:block;
+  -webkit-text-stroke:2px var(--sunglow);
+  color:transparent;
+}
+.hero-sub{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  margin-top:1.5rem;
+  animation:fadeUp 1s ease 0.7s both;
+}
+.hero-desc{font-size:0.9rem;color:var(--muted);max-width:340px;line-height:1.7;}
+.hero-scroll{
+  display:flex;flex-direction:column;align-items:center;gap:0.5rem;
+  font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);
+}
+.scroll-line{width:1px;height:60px;background:linear-gradient(var(--sunglow),transparent);animation:scrollPulse 2s ease-in-out infinite;}
+@keyframes scrollPulse{0%{transform:scaleY(0);transform-origin:top;}50%{transform:scaleY(1);transform-origin:top;}51%{transform-origin:bottom;}100%{transform:scaleY(0);transform-origin:bottom;}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
+
+@media(max-width:768px){
+  .hero-content{padding:0 1.5rem 3rem;}
+}

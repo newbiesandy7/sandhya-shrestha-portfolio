@@ -1,0 +1,15 @@
+/* MARQUEE */
+.marquee-bar{
+  background:var(--wisteria);padding:0.6rem 0;overflow:hidden;
+  position:relative;z-index:10;
+}
+.marquee-track{
+  display:flex;gap:0;white-space:nowrap;
+  animation:marquee 18s linear infinite;
+}
+.marquee-item{
+  font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:0.1em;
+  color:var(--darker);padding:0 2rem;display:flex;align-items:center;gap:1rem;
+}
+.marquee-item::after{content:'✦';font-size:0.6rem;}
+@keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}

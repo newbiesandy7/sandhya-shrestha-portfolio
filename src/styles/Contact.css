@@ -1,0 +1,79 @@
+/* CONTACT */
+#contact{
+  min-height:80vh;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--dark);
+  text-align:center;
+  padding:6rem 3rem;
+}
+.contact-bg{
+  position:absolute;
+  inset:0;
+  background:radial-gradient(ellipse 60% 70% at 50% 50%, var(--sunglow), transparent 65%);
+}
+.contact-inner{position:relative;z-index:2;max-width:700px;}
+.contact-big{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(3.5rem,9vw,8rem);
+  line-height:0.9;
+  letter-spacing:0.02em;
+  margin-bottom:2rem;
+  color:var(--text);
+}
+.contact-big .outline{
+  color:transparent;
+  -webkit-text-stroke:2px var(--text);
+}
+.contact-big .filled{color:var(--wisteria);}
+.contact-sub{
+  font-size:1rem;
+  color:var(--muted);
+  line-height:1.7;
+  max-width:420px;
+  margin:0 auto 3rem;
+}
+.contact-email{
+  display:inline-block;
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.4rem;
+  font-style:italic;
+  color:var(--wisteria);
+  border-bottom:1px solid rgba(254,198,233,0.4);
+  padding-bottom:0.25rem;
+  text-decoration:none;
+  margin-bottom:2.5rem;
+  transition:color 0.2s,border-color 0.2s;
+}
+.contact-email:hover{color:yellow;border-color:var(--sunglow);}
+.contact-socials{
+  display:flex;
+  gap:1.5rem;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+.social-pill{
+  padding:0.6rem 1.5rem;
+  border:1px solid rgba(254,198,233,0.2);
+  border-radius:100px;
+  font-size:0.75rem;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+  text-decoration:none;
+  transition:all 0.2s;
+  background:transparent;
+  cursor:pointer;
+}
+.social-pill:hover{
+  background:var(--wisteria-dim);
+  border-color:var(--wisteria);
+  color:var(--text);
+}
+
+@media(max-width:768px){
+  #contact{padding:4rem 1.5rem;}
+}
