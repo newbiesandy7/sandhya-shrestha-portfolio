@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import roseMockup from '../Images/socialS_rosegarden_mockup.png'
-import '../styles/Projects.css'
+import '../styles/WorksPage.css'
 
-export default function Projects() {
+export default function WorksPage() {
   const navigate = useNavigate()
+  const [filter, setFilter] = useState('all')
 
   const projects = [
     {
@@ -81,34 +82,50 @@ export default function Projects() {
     }
   ]
 
-  const handleFolderClick = () => {
-    navigate('/works')
-  }
+  const categories = ['all', 'Brand Identity', 'Social Media', 'Sport', 'Poster']
+  const filtered = filter === 'all' ? projects : projects.filter(p => p.category === filter)
 
   return (
-    <>
-      <section id="work" className="hero-projects">
-        <div className="title-wrap">
-          <h1>Proj<em>ects</em></h1>
-        </div>
+    <div className="works-page">
+      <div className="works-header">
+        <h1>All Works</h1>
+        <p>Explore a curated selection of recent projects</p>
+      </div>
 
-        <div className="folder-scene" id="folder" onClick={handleFolderClick}>
-          <div className="folder-tab"></div>
-          <div className="card-stack">
-            <div className="stacked-card sc1"><span className="label">Branding</span></div>
-            <div className="stacked-card sc2"><span className="label">Social</span></div>
-            <div className="stacked-card sc3"><span className="label">Sport</span></div>
-            <div className="stacked-card sc4"><span className="label">Poster</span></div>
-          </div>
-          <div className="folder-body"></div>
-          <div className="year-badge">
-            <span className="year-num">20<br />26</span>
-            <span className="year-label">Selected Works</span>
-          </div>
-        </div>
+      <div className="filter-bar">
+        {categories.map(cat => (
+          <button
+            key={cat}
+            className={`filter-btn ${filter === cat ? 'active' : ''}`}
+            onClick={() => setFilter(cat)}
+          >
+            {cat === 'all' ? 'All' : cat}
+          </button>
+        ))}
+      </div>
 
-        <p className="hint"><span className="hint-dot"></span> Click folder to explore</p>
-      </section>
-    </>
+      <div className="works-grid">
+        {filtered.map(project => (
+          <div
+            key={project.id}
+            className="project-card"
+            onClick={() => navigate(`/project/${project.id}`, { state: { project } })}
+            data-cat={project.category}
+          >
+            <div className="bg" style={{ background: project.bg }}></div>
+            <div className="info">
+              <div className="cat">{project.category}</div>
+              <div className="name">{project.name}</div>
+              <div className="view-btn">
+                View Project{' '}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
   )
 }

@@ -4,7 +4,7 @@ import '../styles/ProjectsOverlay.css'
 export default function ProjectsOverlay({ projects, onClose, onProjectClick }) {
   const [filter, setFilter] = useState('all')
 
-  const categories = ['all', 'Brand Identity', 'Social Media', 'Sport', 'Poster']
+  const categories = ['all', 'Brand Identity', 'Social Media', 'Web Development', 'Poster']
   const filtered = filter === 'all' ? projects : projects.filter(p => p.category === filter)
 
   return (
@@ -15,15 +15,6 @@ export default function ProjectsOverlay({ projects, onClose, onProjectClick }) {
         </svg>
         Close
       </button>
-      <div className="overlay-nav">
-        <span>Selected Works — 2026</span>
-        <button type="button" className="close-btn" onClick={onClose}>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" width="14" height="14">
-            <path d="M18 6L6 18M6 6l12 12" />
-          </svg>
-          Close
-        </button>
-      </div>
 
       <div className="filter-bar">
         {categories.map(cat => (
@@ -59,6 +50,7 @@ export default function ProjectsOverlay({ projects, onClose, onProjectClick }) {
           </div>
         ))}
       </div>
+
     </div>
   )
 }

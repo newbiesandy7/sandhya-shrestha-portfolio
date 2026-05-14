@@ -22,7 +22,7 @@
   --folder-card-shadow-hover:0 20px 40px rgba(0,0,0,.8);
   --folder-card-overlay:rgba(0,0,0,.7);
   --year-gradient:linear-gradient(135deg,#fff 0%,rgba(255,255,255,.3) 100%);
-  --project-1:linear-gradient(135deg,#0d2137 0%,#1b4a7a 50%,#0d2137 100%);
+  --project-1:image-set('/Images/socialS_rosegarden_mockup.png') 1x;
   --project-2:linear-gradient(135deg,#2a0a0a 0%,#6b1a1a 50%,#2a0a0a 100%);
   --project-3:linear-gradient(135deg,#071a07 0%,#1a4a1a 50%,#071a07 100%);
   --project-4:linear-gradient(135deg,#1a1207 0%,#4a3010 50%,#1a1207 100%);
@@ -67,7 +67,15 @@ html{scroll-behavior:smooth;}
 html{scroll-padding-top:6.5rem;}
 body{font-family:'DM Sans',sans-serif;background:var(--darker);color:var(--text);overflow-x:hidden;cursor:none;transition:background 0.3s ease,color 0.3s ease;}
 
-.app{padding-top:6.5rem;}
+.app{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+.app > footer{
+  margin-top:auto;
+}
 
 /* NAV */
 .navbar{
@@ -88,6 +96,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--darker);color:var(--text)
   font-size:1.6rem;
   letter-spacing:0.1em;
   color:white;
+  cursor:pointer;
 }
 .nav-links{display:flex;gap:2.5rem;list-style:none;}
 .nav-links a{

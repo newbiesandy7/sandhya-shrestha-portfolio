@@ -35,7 +35,14 @@ export default function ProjectDetail({ project, onClose }) {
               </span>
             ))}
           </div>
-          <button className="detail-link">View Full Project →</button>
+          <a
+            className="detail-link"
+            href="https://www.behance.net/gallery/249327613/Social-Media-Designs-For-Rose-Garden-Party-Palace"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Full Project →
+          </a>
         </div>
       </div>
     </div>

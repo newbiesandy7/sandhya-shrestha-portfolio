@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react'
-import Hero from './components/Hero'
-import About from './components/About'
-import Projects from './components/Projects'
-import Services from './components/Services'
-import Contact from './components/Contact'
+import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom'
 import CustomCursor from './components/CustomCursor'
-import Marquee from './components/Marquee'
+import HomePage from './pages/HomePage'
+import WorksPage from './pages/WorksPage'
+import ProjectDetailPage from './pages/ProjectDetailPage'
 import './App.css'
 
-function App() {
+function AppContent() {
+  const navigate = useNavigate()
   const [theme, setTheme] = useState(() => {
     const savedTheme = localStorage.getItem('theme')
     if (savedTheme === 'light' || savedTheme === 'dark') {
@@ -19,10 +18,21 @@ function App() {
   })
 
   const scrollToSection = (sectionId) => {
-    const section = document.getElementById(sectionId)
-
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    // If we're not on home page, navigate home first
+    if (window.location.pathname !== '/') {
+      navigate('/', { replace: true })
+      // Wait for navigation, then scroll
+      setTimeout(() => {
+        const section = document.getElementById(sectionId)
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        }
+      }, 100)
+    } else {
+      const section = document.getElementById(sectionId)
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
     }
   }
 
@@ -63,17 +73,17 @@ function App() {
     <div className="app">
       <CustomCursor />
       <nav className="navbar">
-        <div className="nav-logo">Sandhya Shrestha</div>
+        <div className="nav-logo" onClick={() => navigate('/')}>Sandhya Shrestha</div>
         <ul className="nav-links">
-          <li><a href="#about" onClick={(event) => { event.preventDefault(); scrollToSection('about') }}>About</a></li>
-          <li><a href="#work" onClick={(event) => { event.preventDefault(); scrollToSection('work') }}>Works</a></li>
-          <li><a href="#services" onClick={(event) => { event.preventDefault(); scrollToSection('services') }}>Services</a></li>
-          <li><a href="#contact" onClick={(event) => { event.preventDefault(); scrollToSection('contact') }}>Contact</a></li>
+          <li><a href="#" onClick={(event) => { event.preventDefault(); scrollToSection('about') }}>About</a></li>
+          <li><a href="/works" onClick={(event) => { event.preventDefault(); navigate('/works') }}>Works</a></li>
+          <li><a href="#" onClick={(event) => { event.preventDefault(); scrollToSection('services') }}>Services</a></li>
+          <li><a href="#" onClick={(event) => { event.preventDefault(); scrollToSection('contact') }}>Contact</a></li>
           <li>
             <button
               type="button"
               className="theme-toggle"
-              onClick={toggleTheme}
+              onClick={() => setTheme((currentTheme) => (currentTheme === 'dark' ? 'light' : 'dark'))}
               aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
               aria-pressed={theme === 'light'}
             >
@@ -83,12 +93,13 @@ function App() {
           </li>
         </ul>
       </nav>
-      <Hero />
-      <Marquee />
-      <About />
-      <Projects />
-      <Services />
-      <Contact />
+
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/works" element={<WorksPage />} />
+        <Route path="/project/:id" element={<ProjectDetailPage />} />
+      </Routes>
+
       <footer className="site-footer">
         <div className="footer-top">
           <div>
@@ -97,7 +108,7 @@ function App() {
           </div>
           <div className="footer-links">
             <a href="#about" onClick={(event) => { event.preventDefault(); scrollToSection('about') }}>About Me</a>
-            <a href="#work" onClick={(event) => { event.preventDefault(); scrollToSection('work') }}>Works</a>
+            <a href="/works" onClick={(event) => { event.preventDefault(); navigate('/works') }}>Works</a>
             <a href="#services" onClick={(event) => { event.preventDefault(); scrollToSection('services') }}>Services</a>
             <a href="#contact" onClick={(event) => { event.preventDefault(); scrollToSection('contact') }}>Contact Me</a>
             <a href="mailto:sandhya@example.com">sandhya@example.com</a>
@@ -110,6 +121,14 @@ function App() {
         </div>
       </footer>
     </div>
+  )
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
+    </BrowserRouter>
   )
 }
 
