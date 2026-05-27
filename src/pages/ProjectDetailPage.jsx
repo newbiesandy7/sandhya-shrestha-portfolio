@@ -1,5 +1,9 @@
 import { useParams, useNavigate, useLocation } from 'react-router-dom'
+import cloudSathiMockup from '../Images/image.png'
+import auraMockup from '../Images/Screenshot 2026-05-15 161609.png'
+import atithiMockup from '../Images/Screenshot 2026-05-15 162136.png'
 import roseMockup from '../Images/socialS_rosegarden_mockup.png'
+import heroMockup from '../assets/hero.png'
 import '../styles/ProjectDetailPage.css'
 
 export default function ProjectDetailPage() {
@@ -23,36 +27,39 @@ export default function ProjectDetailPage() {
       },
       {
         id: 2,
-        name: 'Laderame Campaign',
+        name: 'Cloud Sathi',
         category: 'Social Media',
-        bg: 'var(--project-2)',
-        accent: '#c43030',
-        desc: 'Multi-platform social media campaign for a music release — feed posts, stories, and motion loops.',
-        tags: ['Instagram', 'Motion', 'Campaign', 'Music']
+        bg: `url(${cloudSathiMockup}) center/cover no-repeat`,
+        accent: '#1ea1f2',
+        link: 'https://www.behance.net/gallery/249329905/Social-Media-Marketing-For-IT-Company-CloudSathi',
+        desc: 'Social media marketing design for an IT company focused on brand growth, digital presence, and business communication.',
+        tags: ['Social Media', 'Marketing', 'Branding', 'IT Company']
       },
       {
         id: 3,
-        name: 'Maton XII',
-        category: 'Sport',
-        bg: 'var(--project-3)',
-        accent: '#2d9e2d',
-        desc: 'Sport event branding and graphic package for a martial arts tournament series.',
-        tags: ['Event', 'Branding', 'MMA', 'Print']
+        name: 'Aura',
+        category: 'Brand Identity',
+        bg: `url(${auraMockup}) center/cover no-repeat`,
+        accent: '#5a3214',
+        link: 'https://www.behance.net/gallery/249329457/Branding-of-Coffee-Brand-Aura',
+        desc: 'Branding concept for a coffee brand with a warm visual identity and artisanal positioning.',
+        tags: ['Coffee', 'Branding', 'Packaging', 'Identity']
       },
       {
         id: 4,
-        name: 'Idul Fitro Poster',
-        category: 'Poster',
-        bg: 'var(--project-4)',
+        name: 'Atithi Party Palace',
+        category: 'Social Media',
+        bg: `url(${atithiMockup}) center/cover no-repeat`,
         accent: '#c4912d',
-        desc: 'Festive poster series celebrating Eid — combining traditional motifs with modern geometric layouts.',
-        tags: ['Holiday', 'Print', 'Geometric', 'Series']
+        link: 'https://www.behance.net/gallery/249329397/Social-Media-Post-design-for-Atithi-Party-Palace',
+        desc: 'Social media post design for Atithi Party Palace, featuring event-focused hospitality visuals and premium celebration layouts.',
+        tags: ['Social Media', 'Hospitality', 'Event', 'Promotion']
       },
       {
         id: 5,
         name: 'Pulse Brand',
         category: 'Brand Identity',
-        bg: 'var(--project-5)',
+        bg: `url(${roseMockup}) center/cover no-repeat`,
         accent: '#4444ff',
         desc: 'Lifestyle brand identity for a streetwear label — logomark, color system, and packaging design.',
         tags: ['Streetwear', 'Packaging', 'Color System']
@@ -61,7 +68,7 @@ export default function ProjectDetailPage() {
         id: 6,
         name: 'City Run 2026',
         category: 'Sport',
-        bg: 'var(--project-6)',
+        bg: `url(${cloudSathiMockup}) center/cover no-repeat`,
         accent: '#9945ff',
         desc: 'Visual identity and promotional materials for a major urban marathon event.',
         tags: ['Marathon', 'Event', 'Wayfinding', 'Motion']
@@ -70,7 +77,7 @@ export default function ProjectDetailPage() {
         id: 7,
         name: 'Eclipse Series',
         category: 'Poster',
-        bg: 'var(--project-7)',
+        bg: `url(${auraMockup}) center/cover no-repeat`,
         accent: '#ffffff',
         desc: 'Minimalist poster series exploring light, shadow, and celestial phenomena as visual metaphors.',
         tags: ['Minimalist', 'Fine Art', 'Limited Edition']
@@ -79,7 +86,7 @@ export default function ProjectDetailPage() {
         id: 8,
         name: 'Vibra Social Kit',
         category: 'Social Media',
-        bg: 'var(--project-8)',
+        bg: `url(${heroMockup}) center/cover no-repeat`,
         accent: '#ff6b35',
         desc: 'Content design system for a music festival brand — 80+ templates across all major platforms.',
         tags: ['Festival', 'Templates', 'Multi-platform']
@@ -134,7 +141,7 @@ export default function ProjectDetailPage() {
           </div>
           <a
             className="detail-link"
-            href="https://www.behance.net/gallery/249327613/Social-Media-Designs-For-Rose-Garden-Party-Palace"
+            href={project.link || 'https://www.behance.net/gallery/249327613/Social-Media-Designs-For-Rose-Garden-Party-Palace'}
             target="_blank"
             rel="noopener noreferrer"
           >

@@ -5,9 +5,9 @@ export default function Hero() {
     <section className="hero">
       <div className="hero-bg"></div>
       <div className="hero-grid"></div>
-      <div className="hero-number">26</div>
+      <div className="hero-number">20</div>
       <div className="hero-content">
-        <div className="hero-eyebrow">Graphic Designer · Kathmandu, Nepal</div>
+        <div className="hero-eyebrow">Graphic Designer · Chitwan, Nepal</div>
         <h1 className="hero-title">
           <span className="t1">SANDHYA</span>
           <span className="t2">SHRESTHA</span>

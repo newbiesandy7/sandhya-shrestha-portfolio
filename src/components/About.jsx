@@ -1,12 +1,12 @@
 import '../styles/About.css'
+import  ppImg from '../Images/PP.jpeg' 
 
 export default function About() {
   return (
     <section id="about">
       <div className="about-left reveal-l">
-        <div className="about-visual-bg"></div>
-        <div className="about-monogram">SS</div>
-        <div className="about-tag">Est. 2023 · Kathmandu</div>
+        <div className="about-visual-bg"><img src={ppImg} alt="Sandhya Shrestha" /></div>
+        <div className="about-tag">Est. 2023 · Chitwan, Nepal</div>
       </div>
       <div className="about-right reveal-r">
         <div className="s-label">About Me</div>
@@ -40,7 +40,7 @@ export default function About() {
           <div className="stat-l">Years Experience</div>
         </div>
         <div className="stat reveal d3">
-          <div className="stat-n">30+</div>
+          <div className="stat-n">10+</div>
           <div className="stat-l">Happy Clients</div>
         </div>
       </div>

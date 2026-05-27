@@ -32,36 +32,36 @@
   --project-8:linear-gradient(135deg,#1a0a07 0%,#4a2010 50%,#1a0a07 100%);
 }
 html[data-theme='light']{
-  --dark:#f2e9dd;
-  --darker:#fbf7f1;
-  --wisteria:#7d49c7;
-  --wisteria-dim:rgba(125,73,199,0.1);
-  --sunglow:#0066ff;
-  --text:#15131a;
-  --muted:rgba(21,19,26,0.68);
+  --dark:#ede3d7;
+  --darker:#faf7f2;
+  --wisteria:#8B5CF6;
+  --wisteria-dim:rgba(139,92,246,0.12);
+  --sunglow:#0052CC;
+  --text:#0F172A;
+  --muted:rgba(15,23,42,0.72);
   --card-bg:#ffffff;
-  --cursor-ring:rgba(15,23,42,0.3);
-  --navbar-bg:rgba(255,255,255,0.74);
-  --navbar-border:rgba(15,23,42,0.08);
-  --project-glow:radial-gradient(circle,rgba(0,102,255,.18) 0%,transparent 70%);
-  --folder-tab:#d5e2ff;
-  --folder-tab-hover:#bfd2ff;
-  --folder-body:linear-gradient(160deg,#edf3ff 0%,#dce7ff 60%,#c8d8ff 100%);
-  --folder-shadow:0 30px 80px rgba(58,91,160,.18),0 0 0 1px rgba(15,23,42,.06);
-  --folder-shadow-hover:0 50px 100px rgba(58,91,160,.24),0 0 0 1px rgba(15,23,42,.08);
-  --folder-card:#f5f8ff;
-  --folder-card-shadow:0 8px 24px rgba(15,23,42,.14);
-  --folder-card-shadow-hover:0 20px 40px rgba(15,23,42,.18);
-  --folder-card-overlay:rgba(15,23,42,.16);
-  --year-gradient:linear-gradient(135deg,#111827 0%,rgba(17,24,39,.45) 100%);
-  --project-1:linear-gradient(135deg,#edf4ff 0%,#a7c8ff 50%,#cfe0ff 100%);
-  --project-2:linear-gradient(135deg,#ffecec 0%,#ffb9b9 50%,#ffdada 100%);
-  --project-3:linear-gradient(135deg,#eff9ef 0%,#b8e6b8 50%,#dcf4dc 100%);
-  --project-4:linear-gradient(135deg,#fff4e1 0%,#f0c985 50%,#ffecc8 100%);
-  --project-5:linear-gradient(135deg,#f2f1ff 0%,#b8bcff 50%,#dcdcff 100%);
-  --project-6:linear-gradient(135deg,#f2efff 0%,#cab3ff 50%,#e4dfff 100%);
-  --project-7:linear-gradient(135deg,#ffffff 0%,#d6dbe6 50%,#f7f8fb 100%);
-  --project-8:linear-gradient(135deg,#fff1ea 0%,#ffbc9b 50%,#ffe5da 100%);
+  --cursor-ring:rgba(0,82,204,0.25);
+  --navbar-bg:rgba(255,255,255,0.85);
+  --navbar-border:rgba(0,82,204,0.12);
+  --project-glow:radial-gradient(circle,rgba(0,82,204,.22) 0%,transparent 70%);
+  --folder-tab:#c7d8f7;
+  --folder-tab-hover:#afc2f0;
+  --folder-body:linear-gradient(160deg,#e8f1fe 0%,#d9e5f9 60%,#c5d9f5 100%);
+  --folder-shadow:0 30px 80px rgba(0,82,204,.16),0 0 0 1px rgba(0,82,204,.1);
+  --folder-shadow-hover:0 50px 100px rgba(0,82,204,.24),0 0 0 1px rgba(0,82,204,.14);
+  --folder-card:#f3f7ff;
+  --folder-card-shadow:0 8px 24px rgba(0,82,204,.12);
+  --folder-card-shadow-hover:0 20px 40px rgba(0,82,204,.18);
+  --folder-card-overlay:rgba(0,82,204,.12);
+  --year-gradient:linear-gradient(135deg,#0052CC 0%,rgba(0,82,204,.6) 100%);
+  --project-1:linear-gradient(135deg,#dceffe 0%,#93c5fd 50%,#bfdbfe 100%);
+  --project-2:linear-gradient(135deg,#ffe8e8 0%,#ffb0b0 50%,#ffc7c7 100%);
+  --project-3:linear-gradient(135deg,#e8f7e8 0%,#a6dda6 50%,#c8f0c8 100%);
+  --project-4:linear-gradient(135deg,#fff3d9 0%,#f0c26f 50%,#ffe4a6 100%);
+  --project-5:linear-gradient(135deg,#e8e4ff 0%,#a8acff 50%,#c9c9ff 100%);
+  --project-6:linear-gradient(135deg,#e8e0ff 0%,#c19aff 50%,#dcc9ff 100%);
+  --project-7:linear-gradient(135deg,#f0f4f8 0%,#d1dbe8 50%,#e5ebf5 100%);
+  --project-8:linear-gradient(135deg,#ffead0 0%,#ffb392 50%,#ffd4b8 100%);
 }
 html{scroll-behavior:smooth;}
 html{scroll-padding-top:6.5rem;}
@@ -89,6 +89,8 @@ body{font-family:'DM Sans',sans-serif;background:var(--darker);color:var(--text)
   align-items:center;
   padding:1.5rem 3rem;
   mix-blend-mode:difference;
+  background:rgba(10,10,26,0.75);
+  backdrop-filter:blur(18px);
   transition:background 0.3s ease,border-color 0.3s ease,mix-blend-mode 0.3s ease;
 }
 .nav-logo{

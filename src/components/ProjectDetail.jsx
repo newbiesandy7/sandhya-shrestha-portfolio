@@ -37,7 +37,7 @@ export default function ProjectDetail({ project, onClose }) {
           </div>
           <a
             className="detail-link"
-            href="https://www.behance.net/gallery/249327613/Social-Media-Designs-For-Rose-Garden-Party-Palace"
+            href={project.link || 'https://www.behance.net/gallery/249327613/Social-Media-Designs-For-Rose-Garden-Party-Palace'}
             target="_blank"
             rel="noopener noreferrer"
           >
